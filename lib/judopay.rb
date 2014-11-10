@@ -5,6 +5,10 @@ require_relative 'judopay/serializer'
 require_relative 'judopay/error'
 require_relative 'judopay/null_logger'
 
+Dir[File.dirname(__FILE__) + '/judopay/models/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/judopay/models/market/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/judopay/models/webpayments/*.rb'].each {|file| require file }
+
 module Judopay
   class << self
     attr_accessor :configuration
